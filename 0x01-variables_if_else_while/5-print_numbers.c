@@ -1,31 +1,16 @@
-nclude <stdio.h>
-
-
+#include <stdio.h>
 
 /**
- *
- *  * main - prints numbers from 0 to 10
- *
- *   * followed by a new line
- *
- *    * Return: Always 0 (Success)
- *
- *     */
-
+ * main - prints numbers from 0 to 10
+ * followed by a new line
+ * Return: Always 0 (Success)
+ */
 int main(void)
-
 {
+int n;
 
-	int n;
-
-
-
-	for (n = 0; n < 10; n++)
-
-		printf("%d", n);
-
-	printf("\n");
-
-	return (0);
-
+for (n = 0; n < 10; n++)
+printf("%d", n);
+printf("\n");
+return (0);
 }
