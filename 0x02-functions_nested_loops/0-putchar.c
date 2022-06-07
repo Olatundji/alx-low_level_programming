@@ -1,6 +1,9 @@
 #include "_putchar"
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 8f069909e048f0ea58933c32b0d061d2bd6c5d88
 
 /**
  *
