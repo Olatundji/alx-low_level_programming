@@ -1,39 +1,20 @@
-nclude "main.h"
-
+#include "main.h"
 #include <string.h>
 
-
-
 /**
- *
- * * main - Prints numbers between 00 to 89.
- *
- * *
- *
- * * Return: Always 0 (Success)
- *
- * */
-
+* main - Prints numbers between 00 to 89.
+*
+* Return: Always 0 (Success)
+*/
 int main(void)
-
 {
+	char word[9] = "_putchar";
+	int i = 0;
 
-		char word[9] = "_putchar";
+	for (i = 0; i < 8; i++)
+		_putchar(word[i]);
 
-			int i = 0;
+	_putchar('\n');
 
-
-
-				for (i = 0; i < 8; i++)
-
-							_putchar(word[i]);
-
-
-
-					_putchar('\n');
-
-
-
-						return (0);
-
+	return (0);
 }
