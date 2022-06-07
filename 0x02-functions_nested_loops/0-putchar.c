@@ -1,13 +1,14 @@
-#include "_putchar"
-<<<<<<< HEAD
+nclude "main.h"
+
+#include <string.h>
 
 
-=======
->>>>>>> 8f069909e048f0ea58933c32b0d061d2bd6c5d88
 
 /**
  *
- * * main -  prints _putchar, followed by a new line
+ * * main - Prints numbers between 00 to 89.
+ *
+ * *
  *
  * * Return: Always 0 (Success)
  *
@@ -15,30 +16,24 @@
 
 int main(void)
 
-
-
 {
 
-	_putchar('_');
+		char word[9] = "_putchar";
 
-	_putchar('p');
-
-	_putchar('u');
-
-	_putchar('t');
-
-	_putchar('c');
-
-	_putchar('h');
-
-	_putchar('a');
-
-	_putchar('r');
-
-	_putchar('\n');
+			int i = 0;
 
 
 
-	return (0);
+				for (i = 0; i < 8; i++)
+
+							_putchar(word[i]);
+
+
+
+					_putchar('\n');
+
+
+
+						return (0);
 
 }
