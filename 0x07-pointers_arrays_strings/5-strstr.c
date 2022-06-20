@@ -1,25 +1,18 @@
 #include "main.h"
 
 /**
- * _strstr - returns pointer to first char of matching substring
- * @haystack: string to find substring in
- * @needle: substring to find match of
- * Return: pointer to first char of matching substring
+ * print_chessboard - a function that prints a chessboard
+ * @a: an array input to print
+ * Return: Nothing
  */
-
-char *_strstr(char *haystack, char *needle)
+void print_chessboard(char (*a)[8])
 {
-int k;
+int i = 0, j;
 
-while (*haystack != '\0')
+for (; i < 8; i++)
 {
-k = 0;
-while (*haystack == *needle && *haystack != '\0' && *needle != '\0')
-haystack++, needle++, k++;
-if (*needle == '\0')
-return (haystack - k);
-haystack -= (k - 1), needle -= k;
+for (j = 0; j < 8; j++)
+_putchar(a[i][j]);
+_putchar('\n');
 }
-return ('\0');
 }
-© 2022 GitHub, Inc.
