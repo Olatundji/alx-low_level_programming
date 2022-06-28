@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 nclude "main.h"
 
 /**
@@ -31,3 +32,6 @@ int _isupper(int c)
 					return (0);
 
 }
+=======
+
+>>>>>>> bb7bfc1075a8fd0a5b830a779314a925d03ac8fb
