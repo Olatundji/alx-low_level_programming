@@ -1,21 +1,11 @@
-nclude "main.h"
-
-
+#include "main.h"
 
 /**
- *
- *  * main function
- *
- *   */
-
-
+ * main function
+ */
 
 int main(void)
-
 {
-
-	_puts("\"At the end of the day, my goal was to be the best hacker\"\n");
-
-	return (0);
-
+_puts("\"At the end of the day, my goal was to be the best hacker\"\n");
+return (0);
 }
