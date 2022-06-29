@@ -1,33 +1,17 @@
-nclude "main.h"
-
+#include "main.h"
 /**
- *
- *  * _puts - prints string
- *
- *   * @str: pointer character
- *
- *    * Return void
- *
- *     */
-
+ * _puts - prints string
+ * @str: pointer character
+ * Return void
+ */
 void _puts(char *str)
-
 {
 
+	int i;
 
-
-		int i;
-
-
-
-			for (i = 0; str[i] != '\0'; i++)
-
-					{
-
-							_putchar(str[i]);
-
-								}
-
-				_putchar('\n');
-
+	for (i = 0; str[i] != '\0'; i++)
+	{
+	_putchar(str[i]);
+	}
+	_putchar('\n');
 }
