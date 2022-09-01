@@ -1,36 +1,36 @@
-# inclure  " listes.h "
+#include "lists.h"
 
-/* *
-* add_dnodeint_end - Ajoute un nouveau nœud à la fin d'une liste dlistint_t.
-* @head : un pointeur vers l'en-tête de la liste dlistint_t.
-* @n : L'entier que le nouveau nœud doit contenir.
-*
-* Retour : Si la fonction échoue - NULL.
-* Sinon - l'adresse du nouveau nœud.
+/**
+ * add_dnodeint_end - Adds a new node at the end of a dlistint_t list.
+ * @head: A pointer to the head of the dlistint_t list.
+ * @n: The integer for the new node to contain.
+ *
+ * Return: If the function fails - NULL.
+ *         Otherwise - the address of the new node.
  */
-dlistint_t * add_dnodeint_end ( dlistint_t **head, const  int n)
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	dlistint_t *nouveau, *dernier ;
+	dlistint_t *new, *last;
 
-	new = malloc ( sizeof ( dlistint_t ));
-	si (nouveau == NULL )
-		retour ( NULL );
+	new = malloc(sizeof(dlistint_t));
+	if (new == NULL)
+		return (NULL);
 
-	nouveau-> n = n ;
-	nouveau-> suivant = NULL ;
+	new->n = n;
+	new->next = NULL;
 
-	si (*tête == NULL )
+	if (*head == NULL)
 	{
-		nouveau-> précédent = NULL ;
-		*tête = nouveau ;
-		retour (nouveau);
+		new->prev = NULL;
+		*head = new;
+		return (new);
 	}
 
-	dernier = *tête ;
-	while (dernier-> suivant != NULL )
-		dernier = dernier-> suivant ;
-	dernier-> suivant = nouveau ;
-	nouveau-> précédent = dernier ;
+	last = *head;
+	while (last->next != NULL)
+		last = last->next;
+	last->next = new;
+	new->prev = last;
 
-	retour (nouveau);
+	return (new);
 }
