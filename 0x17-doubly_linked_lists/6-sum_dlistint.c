@@ -1,20 +1,20 @@
-inclure  " listes.h "
+#include "lists.h"
 
-/* *
-* sum_dlistint - Additionne toutes les données d'une liste dlistint_t.
-* @head : La tête de la liste dlistint_t.
-*
-* Retour : La somme de toutes les données.
+/**
+ * sum_dlistint - Sums all the data of a dlistint_t list.
+ * @head: The head of the dlistint_t list.
+ *
+ * Return: The sum of all the data.
  */
-int  sum_dlistint ( dlistint_t *head)
+int sum_dlistint(dlistint_t *head)
 {
-	entier somme = 0 ;
+	int sum = 0;
 
-	tandis que (tête)
+	while (head)
 	{
-		somme += tête-> n ;
-		tête = tête-> suivant ;
+		sum += head->n;
+		head = head->next;
 	}
 
-	retour (somme);
+	return (sum);
 }
