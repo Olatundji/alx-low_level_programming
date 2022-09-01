@@ -1,41 +1,41 @@
-# inclure  " listes.h "
+#include "lists.h"
 
-/* *
-* insert_dnodeint_at_index - Insère un nouveau nœud dans un dlistint_t
-* liste à une position donnée.
-* @h : un pointeur vers l'en-tête de la liste dlistint_t.
-* @idx : La position pour insérer le nouveau nœud.
-* @n : L'entier que le nouveau nœud doit contenir.
-*
-* Retour : Si la fonction échoue - NULL.
-* Sinon - l'adresse du nouveau nœud.
+/**
+ * insert_dnodeint_at_index - Inserts a new node in a dlistint_t
+ *                            list at a given position.
+ * @h: A pointer to the head of the dlistint_t list.
+ * @idx: The position to insert the new node.
+ * @n: The integer for the new node to contain.
+ *
+ * Return: If the function fails - NULL.
+ *         Otherwise - the address of the new node.
  */
-dlistint_t * insert_dnodeint_at_index ( dlistint_t **h, int non signé  idx, int n)
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *tmp = *h, *new ;
+	dlistint_t *tmp = *h, *new;
 
-	si (idx == 0 )
-		retour ( add_dnodeint (h, n));
+	if (idx == 0)
+		return (add_dnodeint(h, n));
 
-	pour (; idx != 1 ; idx--)
+	for (; idx != 1; idx--)
 	{
-		tmp = tmp-> suivant ;
-		si (tmp == NULL )
-			retour ( NULL );
+		tmp = tmp->next;
+		if (tmp == NULL)
+			return (NULL);
 	}
 
-	si (tmp-> suivant == NULL )
-		retour ( add_dnodeint_end (h, n));
+	if (tmp->next == NULL)
+		return (add_dnodeint_end(h, n));
 
-	new = malloc ( sizeof ( dlistint_t ));
-	si (nouveau == NULL )
-		retour ( NULL );
+	new = malloc(sizeof(dlistint_t));
+	if (new == NULL)
+		return (NULL);
 
-	nouveau-> n = n ;
-	nouveau-> précédent = tmp ;
-	nouveau-> suivant = tmp-> suivant ;
-	tmp-> suivant -> précédent = nouveau ;
-	tmp-> suivant = nouveau ;
+	new->n = n;
+	new->prev = tmp;
+	new->next = tmp->next;
+	tmp->next->prev = new;
+	tmp->next = new;
 
-	retour (nouveau);
+	return (new);
 }
