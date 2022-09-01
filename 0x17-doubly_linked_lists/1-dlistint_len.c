@@ -1,20 +1,20 @@
-# inclure  " listes.h "
+#include "lists.h"
 
-/* *
-* dlistint_len - Compte le nombre d'éléments dans une liste liée dlistint_t.
-* @h : La tête de la liste dlistint_t.
-*
-* Retour : Le nombre d'éléments dans la liste dlistint_t.
+/**
+ * dlistint_len - Counts the number of elements in a linked dlistint_t list.
+ * @h: The head of the dlistint_t list.
+ *
+ * Return: The number of elements in the dlistint_t list.
  */
-size_t  dlistint_len ( const  dlistint_t *h)
+size_t dlistint_len(const dlistint_t *h)
 {
-	taille_t nœuds = 0 ;
+	size_t nodes = 0;
 
-	tandis que (h)
+	while (h)
 	{
-		nœuds++ ;
-		h = h-> suivant ;
+		nodes++;
+		h = h->next;
 	}
 
-	retour (nœuds);
+	return (nodes);
 }
