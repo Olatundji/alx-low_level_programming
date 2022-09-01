@@ -1,26 +1,26 @@
 /*
-* Fichier : 0-print_dlistint.c
-* Auteur : Ukonu Divine Chisom
+ * File: 0-print_dlistint.c
+ * Author: Ukonu Divine Chisom
  */
 
-# inclure  " listes.h "
+#include "lists.h"
 
-/* *
-* print_dlistint - Imprime tous les éléments d'une liste dlistint_t.
-* @h : La tête de la liste dlistint_t.
-*
-* Retour : Le nombre de nœuds dans la liste.
+/**
+ * print_dlistint - Prints all the elements of a dlistint_t list.
+ * @h: The head of the dlistint_t list.
+ *
+ * Return: The number of nodes in the list.
  */
-size_t  print_dlistint ( const  dlistint_t *h)
+size_t print_dlistint(const dlistint_t *h)
 {
-	taille_t nœuds = 0 ;
+	size_t nodes = 0;
 
-	tandis que (h)
+	while (h)
 	{
-		nœuds++ ;
-		printf ( " %d \n " , h-> n );
-		h = h-> suivant ;
+		nodes++;
+		printf("%d\n", h->n);
+		h = h->next;
 	}
 
-	retour (nœuds);
+	return (nodes);
 }
