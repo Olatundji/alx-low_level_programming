@@ -1,42 +1,42 @@
-# inclure  " listes.h "
+#include "lists.h"
 
-/* *
-* delete_dnodeint_at_index - Supprime un nœud d'un dlistint_t
-* à un indice donné.
-* @head : un pointeur vers l'en-tête de dlistint_t.
-* @index : l'index du nœud à supprimer.
-*
-* Retour : En cas de succès - 1.
-* Sinon - -1.
+/**
+ * delete_dnodeint_at_index - Deletes a node from a dlistint_t
+ *                            at a given index.
+ * @head: A pointer to the head of the dlistint_t.
+ * @index: The index of the node to delete.
+ *
+ * Return: Upon success - 1.
+ *         Otherwise - -1.
  */
-int  delete_dnodeint_at_index ( dlistint_t **tête, index int non signé ) 
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *tmp = *head ;
+	dlistint_t *tmp = *head;
 
-	si (*tête == NULL )
-		retour (- 1 );
+	if (*head == NULL)
+		return (-1);
 
-	pour (; indice != 0 ; indice --)
+	for (; index != 0; index--)
 	{
-		si (tmp == NULL )
-			retour (- 1 );
-		tmp = tmp-> suivant ;
+		if (tmp == NULL)
+			return (-1);
+		tmp = tmp->next;
 	}
 
-	si (tmp == *tête)
+	if (tmp == *head)
 	{
-		*head = tmp-> suivant ;
-		si (*tête != NULL )
-			(*head)-> prev = NULL ;
+		*head = tmp->next;
+		if (*head != NULL)
+			(*head)->prev = NULL;
 	}
 
-	autre
+	else
 	{
-		tmp-> préc -> suivant = tmp-> suivant ;
-		si (tmp-> suivant != NULL )
-			tmp-> suivant -> préc = tmp-> préc ;
+		tmp->prev->next = tmp->next;
+		if (tmp->next != NULL)
+			tmp->next->prev = tmp->prev;
 	}
 
-	gratuit (tmp);
-	retour ( 1 );
+	free(tmp);
+	return (1);
 }
