@@ -1,21 +1,21 @@
-# inclure  " listes.h "
+#include "lists.h"
 
-/* *
-* get_dnodeint_at_index - Localise un nœud dans une liste dlistint_t.
-* @head : La tête de la liste dlistint_t.
-* @index : le nœud à localiser.
-*
-* Retour : Si le nœud n'existe pas - NULL.
-* Sinon - l'adresse du nœud localisé.
+/**
+ * get_dnodeint_at_index - Locates a node in a dlistint_t list.
+ * @head: The head of the dlistint_t list.
+ * @index: The node to locate.
+ *
+ * Return: If the node does not exist - NULL.
+ *         Otherwise - the address of the located node.
  */
-dlistint_t * get_dnodeint_at_index ( dlistint_t *head, index int non signé ) 
+dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	pour (; indice != 0 ; indice --)
+	for (; index != 0; index--)
 	{
-		si (tête == NULL )
-			retour ( NULL );
-		tête = tête-> suivant ;
+		if (head == NULL)
+			return (NULL);
+		head = head->next;
 	}
 
-	retour (tête);
+	return (head);
 }
