@@ -1,17 +1,17 @@
-# inclure  " listes.h "
+#include "lists.h"
 
-/* *
-* free_dlistint - Libère une liste liée dlistint_t.
-* @head : La tête de la liste dlistint_t.
+/**
+ * free_dlistint - Frees a linked dlistint_t list.
+ * @head: The head of the dlistint_t list.
  */
-void  free_dlistint ( dlistint_t *head)
+void free_dlistint(dlistint_t *head)
 {
 	dlistint_t *tmp;
 
-	tandis que (tête)
+	while (head)
 	{
-		tmp = tête-> suivant ;
-		libre (tête);
-		tête = tmp ;
+		tmp = head->next;
+		free(head);
+		head = tmp;
 	}
 }
